@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ffffff">
+<title>SymptomIQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ═══════════ CHAT MODE ═══════════ -->
+  <div id="chatMode" class="screen active">
+
+    <header class="appHeader">
+      <div class="headerBrand">
+        <div class="brandDot"></div>
+        <span>SymptomIQ</span>
+      </div>
+      <div class="headerActions">
+        <button id="toVoiceBtn" class="hBtn" title="Voice mode">
+          <i class="ri-mic-line"></i>
+        </button>
+        <button id="newChatBtn" class="hBtn" title="New session">
+          <i class="ri-refresh-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="safetyBanner">
+      <i class="ri-shield-check-line"></i>
+      Not a substitute for professional medical advice. Always consult a doctor.
+    </div>
+
+    <div id="messages"></div>
+
+    <div class="inputBar">
+      <input id="textInput" type="text" placeholder="Describe your symptoms…" autocomplete="off" autocorrect="off">
+      <button id="sendBtn" class="sendBtn" title="Send">
+        <i class="ri-arrow-up-line"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ═══════════ VOICE MODE ═══════════ -->
+  <div id="voiceMode" class="screen">
+
+    <div class="voiceNav">
+      <button id="toChatBtn" class="backBtn">
+        <i class="ri-arrow-left-line"></i>
+      </button>
+      <span class="voiceNavTitle">Voice Mode</span>
+      <div style="width:36px"></div>
+    </div>
+
+    <div class="orbSection">
+      <div id="orbContainer"></div>
+    </div>
+
+    <div class="voiceInfo">
+      <div id="voiceLabel" class="voiceLabel">Tap to speak</div>
+      <div id="voiceTranscript" class="voiceTranscript"></div>
+    </div>
+
+    <div class="voiceActions">
+      <button id="orbTapBtn" class="tapBtn">
+        <i class="ri-mic-fill"></i>
+      </button>
+      <div class="voiceHint">Tap mic to speak &bull; Tap again to interrupt AI</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
